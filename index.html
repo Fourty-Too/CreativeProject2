@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="index.html">
+      <span><img src="./images/Unknown.png"></span>
+      Weather App
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div class="center">
+    <h1>Weather App</h1>
+
+    <p>Here at Weather App you can see what the weather is like right now anywhere
+      in the world! You can also get a 5-day forecast for any of the locations
+      you select. Give it a try!</p>
+
+    <form>
+      <label>Enter a U.S. city</label>
+      <input id="weatherInput" type="text"></input>
+      <input id="weatherSubmit" type="submit" value="Submit"></input>
+    </form>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="results">
+    <div id="weatherResults">
+      <p>You have not chosen a city</p>
+    </div>
+  </div>
+
+  <br /><br />
+
+  <button class="collapsible" id="forecast">5-Day Forescast</button>
+  <div class="content">
+    <div id="forecastResults">
+      <p>You have not chosen a city</p>
+    </div>
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/Fourty-Too/CreativeProject1">GitHub Repository</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script text="type/javascript" src="./script.js">
+  </script>
+
+</body>
+
+</html>
