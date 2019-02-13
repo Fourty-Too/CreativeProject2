@@ -13,13 +13,15 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
 
   console.log(value);
 
-  //const url = "https://tastedive.com/api/similar?q=" + value + "&type=music&info=1&k=330172-FindMeMu-V539BPIE";
+  const url = "https://tastedive.com/api/similar?q=" + value + "&type=music&info=1&k=330172-FindMeMu-V539BPIE";
 
-  const url = "https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction";
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+  //const url = "https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction";
 
   console.log(url);
 
-  fetch(url)
+  fetch(proxyurl + url)
    .then(function(response) {
      console.log(response);
      return response.json();
