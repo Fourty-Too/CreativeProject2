@@ -1,12 +1,21 @@
 body {
-  background-color: white;
+  background-color: #D3D3D3;
   padding-bottom: 100px;
 }
 
 h1 {
   text-align: center;
-  font-size: 75px;
+  font-size: 50px;
   margin-top: 30px;
+}
+
+h3 {
+  font-weight: normal;
+}
+
+h5 {
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 p {
@@ -34,16 +43,21 @@ input {
   border-radius: 5px;
 }
 
-#weatherSubmit {
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#artistSubmit {
   background-color: #0000ff;
   color: #fff;
 }
 
-#weatherSubmit:hover {
+#artistSubmit:hover {
   background-color: #0000d1;
 }
 
-#weatherSubmit:active {
+#artistSubmit:active {
   background-color: #0000d1;
   transform: translateY(1px);
 }
@@ -110,21 +124,28 @@ input {
   padding-right: 30px;
 }
 
+.navbar {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .center {
   background-color: powderblue;
   min-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 90%;
   border-radius: 5px;
   box-shadow: 10px 10px 10px grey;
+  padding: 20px;
+  max-width: 900px;
 }
 
 .results {
   min-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  width: 5%;
+  width: 90%;
 }
 
 .scroller {

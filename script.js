@@ -1,14 +1,20 @@
 
 
-document.getElementById("weatherSubmit").addEventListener("click", function(event) {
+document.getElementById("artistSubmit").addEventListener("click", function(event) {
   event.preventDefault();
-  let value = document.getElementById("weatherInput").value;
+  let value = document.getElementById("artistInput").value;
   if (value === "")
     return;
   //console.log(value);
 
   //const url = "http://api.openweathermap.org/data/2.5/weather?q=" + value + ",US&units=imperial" + "&APPID=8238befcdc132d4bde8142ab1f63927e";
+  value1 = value.split(', ').join(",");
+  value1 = value.split(' ,').join(",");
+  value1 = value1.split(',').join(", ");
 
+
+  value = value.split(', ').join("%2C");
+  value = value.split(',').join("%2C");   //Handles both comma-delimited and comma-space-delimited entries
   value = value.split(' ').join('+');
 
   console.log(value);
@@ -20,6 +26,17 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
   //const url = "https://tastedive.com/api/similar?q=red+hot+chili+peppers%2C+pulp+fiction";
 
   console.log(url);
+
+  let results1 = "";
+  results1 += "<br/><br/>";
+  results1 += "<h1 style=\"text-align: left\"> You entered: </h1>";
+  results1 += "<h3> " + value1 + "</h3>";
+  results1 += "<br/><br/>";
+  results1 += "<h1 style=\"text-align: left\"> Your suggested artists: </h1>";
+
+  document.getElementById("artistsEntered").innerHTML = results1;
+  document.getElementById("artistResults").innerHTML = "<h3 style=\"text-align: left\"> Loading... </h3>";
+
 
   fetch(proxyurl + url)
    .then(function(response) {
@@ -43,8 +60,23 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
 
      //results = json;
 
-
      let results = "";
+
+     let resultJSON = json.Similar.Results;
+
+     results += "<hr/>";
+
+     for (let i = 0; i < resultJSON.length; i++) {
+       results += "<h2><a href=\"" + resultJSON[i].wUrl + "\">" + resultJSON[i].Name + "</a></h2>";
+       results += "<h5 style=\"text-align: left\">" + resultJSON[i].wTeaser + "</h5>";
+       results += "<iframe src=\"" + resultJSON[i].yUrl + "\"></iframe>";
+       results += "<br/>"
+       results += "<hr/>";
+     }
+
+     //, margin-left: auto, margin-right: auto, width: 90%
+
+     /*let results = "";
      results += "<div style=\"margin-left: 100px; margin-right: 200px; width: 100%;\">"
      results += "<div style=\"font-size: 40px; font-weight: bold; margin-bottom: 0px ;\">" + json.name + "</div>"
      results += "<div style=\"float: left;\">";
@@ -68,12 +100,12 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
 results += "</div>";
 results += "</div>";
 results += "<br/><br/>";
-results += "<p>    </p>";
+results += "<p>    </p>";*/
 /*results += "<div style=\"display: block; clear: left; color: gray; font-size: x-small;\">";
   results += "<a href=\"http://openweathermap.org/city/5779334?utm_source=openweathermap&utm_medium=widget&utm_campaign=html_old\" target="_blank">More..</a>";
 </div>*/
 
-     document.getElementById("weatherResults").innerHTML = results;
+     document.getElementById("artistResults").innerHTML = results;
    });
 });
 

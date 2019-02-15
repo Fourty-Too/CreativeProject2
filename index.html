@@ -10,28 +10,28 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="index.html">
       <span><img src="./images/Music.jpg"></span>
       Find Awesome Music
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   </nav>
 
-  <div class="center">
-    <h1>Weather App</h1>
+  <div class="container-fluid">
+    <h1>Find Awesome Music</h1>
 
-    <p>Here at Weather App you can see what the weather is like right now anywhere
-      in the world! You can also get a 5-day forecast for any of the locations
-      you select. Give it a try!</p>
+    <p>You know that band you love so much that only released one album? Wouldn't
+      it be great if you could find similar artists that were just as awesome? Well
+      now you can! Get recommendations for great new bands to check out based on your current favorites.</p>
 
-    <form>
-      <label>Enter a U.S. city</label>
-      <input id="weatherInput" type="text"></input>
-      <input id="weatherSubmit" type="submit" value="Submit"></input>
-    </form>
+    <div class="center">
+      <form>
+        <label>Favorite Artists</label>
+        <h5>Separate multiple artists by comma</h5>
+        <input id="artistInput" type="text"></input>
+        <input id="artistSubmit" type="submit" value="Give Me Suggestions!"></input>
+      </form>
+    </div>
   </div>
 
   <br /><br />
@@ -47,6 +47,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
   <script text="type/javascript" src="./script.js">
   </script>
+
+  <div class="results">
+    <div id="artistsEntered">
+    </div>
+    <div id="artistResults">
+    </div>
+  </div>
 
 </body>
 
